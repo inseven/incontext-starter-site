@@ -1,0 +1,17 @@
+
+.navigation {
+    text-align: center;
+}
+
+.navigation li {
+    display: inline;
+}
+
+.page-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.site-footer {
+    text-align: center;
+}

@@ -1,0 +1,22 @@
+config:
+  title: Your Site
+  author: Your Name
+  date_format: "%B %-d, %Y"
+  date_format_short: "%B %-d"
+  url: "https://example.com"
+
+paths: []
+
+build_steps:
+- task: process_files
+  args:
+    handlers:
+    - when:
+      - '(.*/)?\.DS_Store'
+      - '(.*/)?\..*'
+      - '(.*/)?.*~'
+      then: ignore
+    - when: '(.*/)?.*\.markdown'
+      then: import_markdown
+    - when: '.*'
+      then: copy_file

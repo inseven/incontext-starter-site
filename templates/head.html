@@ -1,0 +1,23 @@
+<head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="last-modified" content="{{ page.last_modified }}" />
+
+    <title>{% if page.title != "" and page.title != nil and page.title %}{{ page.title }} &mdash; {% endif %}{{ site.title }}</title>
+
+    {% if page.title -%}
+        <meta property="og:title" content="{{ page.title }}" />
+    {%- endif %}
+    {% if page.thumbnail -%}
+        <meta property="og:image" content="{{ page.thumbnail.url }}" />
+    {%- endif %}
+
+    <link rel="stylesheet" href="/css/main.css">
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+</head>

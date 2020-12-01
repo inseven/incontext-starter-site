@@ -26,7 +26,6 @@ jobs:
         repository: jbmorley/incontext
         path: incontext
         ref: main
-        token: ${{ secrets.TOKEN }}
 
     - name: Checkout source
       uses: actions/checkout@v2

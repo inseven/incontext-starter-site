@@ -1,0 +1,38 @@
+name: Build and deploy
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+
+  run:
+
+    runs-on: Ubuntu-20.04
+
+    steps:
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+
+    - name: Checkout incontext
+      uses: actions/checkout@v2
+      with:
+        repository: jbmorley/incontext
+        path: incontext
+        ref: main
+        token: ${{ secrets.TOKEN }}
+
+    - name: Checkout source
+      uses: actions/checkout@v2
+      with:
+        path: site
+
+    - name: Build the site
+      run: |
+        python3 incontext/incontext --site site build
